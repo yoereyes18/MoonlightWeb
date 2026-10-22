@@ -1,0 +1,1432 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+
+/* ==========================================================
+   1. VARIABLES DE DISEÑO
+   ========================================================== */
+
+:root {
+
+    --cafe-oscuro: #301b12;
+    --cafe: #493023;
+    --cafe-medio: #76513a;
+    --cafe-claro: #a98264;
+
+    --crema: #fffaf2;
+    --beige: #0f0f0e;
+    --beige-oscuro: #e5d2bd;
+
+    --blanco: #080808;
+    --texto: #ffffff;
+    --texto-suave: #857265;
+
+    --dorado: #bd9966;
+    --borde: #e8d9c8;
+
+    --sombra: 0 5px 18px rgba(36, 20, 12, 0.10);
+    --sombra-hover: 0 12px 28px rgba(36, 20, 12, 0.20);
+
+    --radio: 8px;
+}
+
+
+/* ==========================================================
+   2. CONFIGURACIÓN GENERAL
+   ========================================================== */
+
+html {
+    min-height:10%;
+    scroll-behavior: smooth;
+}
+
+body.productos-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    color: var(--texto);
+    font-family: 'Montserrat', Arial, sans-serif;
+    line-height: 1.5;
+
+    background-color: #000000;
+
+    background-image:
+        linear-gradient(
+            rgba(28, 17, 11, 0.42),
+            rgba(28, 17, 11, 0.56)
+        ),
+        url("../img/Fondo-productos.png");
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.productos-page *,
+.productos-page *::before,
+.productos-page *::after {
+    box-sizing: border-box;
+}
+
+.productos-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.productos-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.productos-page button,
+.productos-page input,
+.productos-page select {
+    font: inherit;
+}
+
+.productos-page button {
+    cursor: pointer;
+}
+
+.productos-page button:focus-visible,
+.productos-page a:focus-visible,
+.productos-page input:focus-visible,
+.productos-page select:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+
+/* ==========================================================
+   3. BARRA DE NAVEGACIÓN
+   ========================================================== */
+
+.productos-page header {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+
+    padding: 10px max(5vw, 20px);
+}
+
+.productos-page nav {
+    display: flex;
+
+    width: min(130px, 100%);
+    min-height: 34px;
+
+    margin: 0 auto;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: clamp(18px, 3vw, 42px);
+
+    font-size: 0;
+}
+
+
+/* ==========================================================
+   3.1 LOGOTIPO
+   ========================================================== */
+
+.productos-page .logo {
+    display: flex;
+
+    margin-right: auto;
+
+    align-items: center;
+}
+
+.productos-page .logo a {
+    display: inline-flex;
+
+    align-items: center;
+}
+
+.productos-page .logo img {
+    display: block;
+
+    width: 52px;
+    height: 52px;
+
+    border: 2px solid rgba(255, 250, 242, .8);
+    border-radius: 50%;
+
+    object-fit: cover;
+    object-position: center;
+
+    box-shadow:
+        0 0 0 1px rgba(239, 203, 145, .35);
+}
+
+
+/* ==========================================================
+   3.2 ENLACES DE NAVEGACIÓN
+   ========================================================== */
+
+.productos-page .menu-enlaces {
+    display: flex;
+
+    align-items: center;
+
+    gap: clamp(16px, 2.4vw, 34px);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.productos-page .menu-enlaces a {
+    color: #fffaf2;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: .78rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color .2s ease;
+}
+
+.productos-page .menu-enlaces a:hover {
+    color: #000000;
+}
+
+
+/* Enlace de la página actual */
+
+.productos-page .menu-enlaces a.active,
+.productos-page .menu-enlaces a.activo {
+    color: #eacb91;
+}
+
+
+/* ==========================================================
+   3.3 BUSCADOR Y ACCIONES
+   ========================================================== */
+
+.productos-page .acciones {
+    display: flex;
+    padding: 8px 10px;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 1rem;
+}
+
+.productos-page .acciones input {
+    width: 15px;
+    height: 34px;
+
+    padding: 8px 10px;
+
+    border: 1px solid rgba(255, 250, 242, .38);
+    border-radius: 3px;
+
+    outline: none;
+
+    background: rgba(18, 12, 16, .34);
+
+    color: #ffffff;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: .72rem;
+}
+
+.productos-page .acciones input::placeholder {
+    color: rgba(0, 0, 0, 0.78);
+    
+}
+
+
+/* ==========================================================
+   3.4 BOTÓN INICIAR SESIÓN
+   ========================================================== */
+
+.productos-page .btn-login {
+    padding: 8px 10px;
+
+    border: 1px solid #181716;
+    border-radius: 2px;
+
+    background: #fde9de;
+    color: #25171b;
+
+    cursor: pointer;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.productos-page .btn-login:hover {
+    background: transparent;
+    color: #000000;
+}
+
+
+/* ==========================================================
+   4. CONTENEDOR PRINCIPAL
+   ========================================================== */
+
+.productos-main {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+    padding: 20px 4%;
+}
+
+
+/* ==========================================================
+   5. ETIQUETAS
+   ========================================================== */
+
+.productos-etiqueta {
+    margin: 0 0 8px;
+
+    color: var(--cafe-medio);
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   6. PORTADA PRINCIPAL
+   ========================================================== */
+
+.productos-hero {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    min-height: 260px;
+    padding: 40px 7%;
+
+    overflow: hidden;
+
+    color: var(--blanco);
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+}
+
+.productos-hero::after {
+    display: none;
+}
+
+.productos-hero-texto {
+    position: relative;
+    z-index: 1;
+
+    max-width: 600px;
+}
+
+.productos-hero .productos-etiqueta {
+    color: #e6e5e4;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.productos-hero h1 {
+    max-width: 600px;
+
+    margin: 0 0 15px;
+
+    color: #fff8ef;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(34px, 4.5vw, 54px);
+    font-weight: 700;
+
+    line-height: 1.15;
+    letter-spacing: -1px;
+
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.30);
+}
+
+.productos-hero-texto > p:last-child {
+    max-width: 480px;
+
+    margin: 0;
+
+    color: #f3e8dd;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.productos-hero-cta {
+    position: relative;
+    z-index: 1;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    padding: 13px 20px;
+
+    color: #ffffff !important;
+    background: #c788c4;
+
+    border: 1px solid #855b76;
+    border-radius: 5px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.productos-hero-cta:hover {
+    color: #ffffff !important;
+    background: #ac94d3;
+
+    transform: translateY(-3px);
+}
+
+/* ==========================================================
+   7. DISTRIBUCIÓN DEL CATÁLOGO
+   ========================================================== */
+
+.productos-layout {
+    display: grid;
+
+    grid-template-columns: 215px minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 25px;
+
+    margin-top: 15px;
+
+    background: transparent;
+}
+
+.productos-catalogo {
+    min-width: 0;
+}
+
+
+/* ==========================================================
+   8. PANEL LATERAL DE FILTROS
+   ========================================================== */
+
+.productos-filtros {
+    padding: 20px 16px;
+
+    color: #000000;
+
+    background: rgba(255, 229, 229, 0.97);
+
+    border: 1px solid rgba(0, 0, 0, 0.85);
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra);
+}
+
+.filtros-cabecera {
+    padding-bottom: 17px;
+    margin-bottom: 17px;
+
+    border-bottom: 1px solid var(--beige-oscuro);
+    color: #f3ebeb;
+}
+
+.filtros-cabecera .productos-etiqueta {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.filtros-cabecera h2 {
+    margin: 0;
+
+    color: #020202;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   9. CATEGORÍAS Y TIPOS
+   ========================================================== */
+
+.filtro-grupo {
+    min-width: 0;
+
+    margin: 0 0 23px;
+    padding: 0;
+
+    border: 0;
+}
+
+.filtro-grupo legend {
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    color: #000000;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.filtro-opcion {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 7px 8px;
+    margin-bottom: 3px;
+
+    color: #000000;
+
+    border-radius: 5px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.filtro-opcion:hover {
+    color: #000000;
+}
+
+.filtro-opcion input {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    margin: 0;
+
+    color: #000000;
+
+    cursor: pointer;
+}
+
+.filtro-opcion input:checked + span {
+    color: var(--cafe-oscuro);
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   10. SELECTOR DE PRECIOS
+   ========================================================== */
+
+.filtro-precio {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 23px;
+
+    color: #000000;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.filtro-precio select {
+    width: 100%;
+    padding: 10px;
+
+    color: #000000;
+    background: #bca1eb;
+
+    border: 1px solid #9979ce;
+    border-radius: 5px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   11. MENSAJE DECORATIVO
+   ========================================================== */
+
+.filtros-nota {
+    margin-top: 25px;
+
+    padding: 18px 10px;
+
+    text-align: center;
+
+    background: #f7bbff;
+
+    border-radius: var(--radio);
+
+    overflow: hidden;
+}
+
+.filtros-nota > span {
+    display: block;
+
+    margin-bottom: 5px;
+
+   color: #000000;
+
+    font-size: 28px;
+}
+
+.filtros-nota p {
+    margin: 0;
+
+    color: #000000;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   12. BARRA SUPERIOR DEL CATÁLOGO
+   ========================================================== */
+
+.catalogo-barra {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    padding: 12px 15px;
+
+    background: rgba(250, 244, 236, 0.96);
+
+    border: 1px solid rgba(255, 219, 180, 0.9);
+    border-radius: var(--radio);
+}
+
+#productos-resultados {
+    margin: 0;
+
+    color: var(--texto-suave);
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   13. CARRITO
+   ========================================================== */
+
+.carrito-resumen {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    color: var(--cafe-oscuro);
+    background: transparent;
+
+    border: 1px solid var(--beige-oscuro);
+    border-radius: 5px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 12px;
+
+    transition: 0.25s ease;
+}
+
+.carrito-resumen:hover {
+    color: var(--blanco);
+    color: #fdf4f4;
+}
+
+.carrito-resumen svg {
+    width: 18px;
+    height: 18px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.6;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#carrito-cantidad {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 21px;
+    height: 21px;
+
+    padding: 0 5px;
+
+    color: var(--blanco);
+     color: #fdf4f4;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   14. ENCABEZADOS DE COLECCIONES
+   ========================================================== */
+
+.productos-coleccion {
+    margin-bottom: 35px;
+}
+
+.coleccion-cabecera {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+
+    padding: 12px 15px;
+
+    background: rgba(250, 244, 236, 0.96);
+
+    border: 1px solid rgba(232, 221, 209, 0.9);
+    border-radius: var(--radio);
+}
+
+.coleccion-cabecera h2 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0;
+
+    color: var(--cafe-oscuro);
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.coleccion-cabecera h2 > span {
+    color: var(--cafe-medio);
+    font-size: 26px;
+}
+
+.ver-coleccion {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 0;
+
+    color: var(--cafe-medio);
+    background: transparent;
+
+    border: 0;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 11px;
+
+    transition: color 0.2s ease;
+}
+
+.ver-coleccion:hover {
+    color: var(--cafe-oscuro);
+}
+
+.ver-coleccion span {
+    font-size: 16px;
+}
+
+
+/* ==========================================================
+   15. CUADRÍCULA DE PRODUCTOS
+   ========================================================== */
+
+.productos-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    align-items: stretch;
+
+    gap: 16px;
+}
+
+
+/* ==========================================================
+   16. TARJETAS DE PRODUCTOS
+   ========================================================== */
+
+.producto-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #fffaf3;
+
+    border: 1px solid #e8d9c8;
+    border-radius: 7px;
+
+    box-shadow: 0 4px 14px rgba(30, 18, 12, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--dorado);
+
+    box-shadow: var(--sombra-hover);
+}
+
+
+/* ==========================================================
+   17. IMÁGENES DE LOS PRODUCTOS
+   ========================================================== */
+
+.producto-imagen {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 165px;
+
+    overflow: hidden;
+
+    background: var(--beige);
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.producto-card:hover .producto-imagen img {
+    transform: scale(1.06);
+}
+
+.producto-imagen.imagen-bubble img {
+    object-position: center;
+}
+
+.producto-imagen.joyeria-imagen img {
+    object-position: center;
+}
+
+.producto-imagen.joyeria-imagen-centro img {
+    object-position: center;
+}
+
+.producto-imagen.joyeria-imagen-abajo img {
+    object-position: center;
+}
+
+
+/* ==========================================================
+   18. ETIQUETAS DE PRODUCTOS
+   ========================================================== */
+
+.producto-etiqueta {
+    position: absolute;
+
+    top: 9px;
+    left: 9px;
+
+    display: inline-block;
+
+    max-width: calc(100% - 18px);
+
+    padding: 5px 8px;
+
+    overflow: hidden;
+
+    color: var(--cafe-oscuro);
+    background: rgba(255, 250, 244, 0.96);
+
+    border: 1px solid rgba(185, 151, 98, 0.4);
+    border-radius: 3px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ==========================================================
+   19. INFORMACIÓN DEL PRODUCTO
+   ========================================================== */
+
+.producto-detalle {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 11px 10px 12px;
+}
+
+.producto-detalle h3 {
+    margin: 0 0 5px;
+
+    color: var(--cafe-oscuro);
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.producto-precio {
+    margin: 0 0 11px;
+
+    color: var(--cafe-oscuro);
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   20. BOTONES PARA AGREGAR AL CARRITO
+   ========================================================== */
+
+.producto-agregar {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    width: 100%;
+    min-height: 35px;
+
+    margin-top: auto;
+
+    padding: 8px 6px;
+
+    color: #ffffff;
+    background: #a18fcc;
+
+    border: 1px solid #8b5cf6;
+    border-radius: 4px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.producto-agregar:hover {
+    color: #ffffff;
+
+    background: #7c3aed;
+
+    border-color: #7c3aed;
+
+    transform: translateY(-2px);
+}
+
+.producto-agregar:active {
+    transform: scale(0.98);
+}
+
+.producto-agregar svg {
+    flex-shrink: 0;
+
+    width: 15px;
+    height: 15px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.6;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* ==========================================================
+   21. MENSAJES DEL CATÁLOGO
+   ========================================================== */
+
+.productos-vacio {
+    margin: 20px 0;
+
+    padding: 25px 15px;
+
+    color: var(--texto-suave);
+    background: var(--beige);
+
+    border: 1px dashed var(--beige-oscuro);
+    border-radius: var(--radio);
+
+    text-align: center;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 13px;
+}
+
+.productos-vacio[hidden],
+.producto-aviso[hidden] {
+    display: none !important;
+}
+
+.productos-nota {
+    margin: 25px 0 0;
+
+    padding-top: 15px;
+
+    color: #000000;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   22. AVISOS DE PRODUCTOS
+   ========================================================== */
+
+.producto-aviso {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 1000;
+
+    max-width: min(360px, calc(100vw - 32px));
+
+    padding: 15px 20px;
+
+    color: var(--blanco);
+    background: var(--cafe-oscuro);
+
+    border: 1px solid var(--dorado);
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra-hover);
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    animation: aparecer-aviso 0.25s ease;
+}
+
+@keyframes aparecer-aviso {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================================
+   23. ELEMENTOS OCULTOS POR FILTROS
+   ========================================================== */
+
+.producto-card[hidden],
+.productos-coleccion[hidden] {
+    display: none !important;
+}
+
+
+/* ==========================================================
+   24. TABLETAS
+   ========================================================== */
+
+@media (max-width: 1100px) {
+
+    .productos-main {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+
+    .productos-layout {
+        grid-template-columns: 190px minmax(0, 1fr);
+
+        gap: 18px;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .producto-imagen {
+        height: 190px;
+    }
+
+    .producto-detalle {
+        padding: 12px;
+    }
+
+    .producto-detalle h3 {
+        font-size: 15px;
+    }
+
+    .producto-agregar {
+        min-height: 38px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* ==========================================================
+   25. TELÉFONOS
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    body.productos-page {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .productos-main {
+        padding: 12px 15px 35px;
+    }
+
+    /* NAVBAR EN MÓVIL */
+
+    .productos-page header {
+        padding: 60px 20px 16px;
+    }
+
+    .productos-page nav {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 16px;
+    }
+
+    .productos-page .logo {
+        display: none;
+    }
+
+    .productos-page .menu-enlaces {
+        justify-content: center;
+
+        gap: 18px;
+    }
+
+    .productos-page .menu-enlaces a {
+        font-size: .75rem;
+    }
+
+    .productos-page .acciones {
+        justify-content: center;
+    }
+
+
+    /* HERO */
+
+    .productos-hero {
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 20px;
+
+        min-height: 260px;
+
+        padding: 30px 20px;
+    }
+
+    .productos-hero h1 {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .productos-hero-texto > p:last-child {
+        font-size: 13px;
+    }
+
+    .productos-hero-cta {
+        padding: 11px 14px;
+
+        font-size: 11px;
+    }
+
+
+    /* CATÁLOGO */
+
+    .productos-layout {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        margin-top: 15px;
+    }
+
+    .productos-filtros {
+        padding: 17px;
+    }
+
+    .filtros-cabecera {
+        margin-bottom: 14px;
+    }
+
+    .filtros-cabecera h2 {
+        font-size: 22px;
+    }
+
+    .filtro-grupo {
+        margin-bottom: 17px;
+    }
+
+    .filtros-nota {
+        margin-top: 10px;
+
+        padding: 12px;
+    }
+
+    .catalogo-barra {
+        margin-bottom: 22px;
+    }
+
+    .coleccion-cabecera h2 {
+        font-size: 20px;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .producto-imagen {
+        height: 145px;
+    }
+
+    .producto-detalle {
+        padding: 10px 8px;
+    }
+
+    .producto-detalle h3 {
+        font-size: 13px;
+    }
+
+    .producto-precio {
+        font-size: 14px;
+    }
+
+    .producto-agregar {
+        gap: 5px;
+
+        padding: 8px 4px;
+
+        font-size: 10px;
+    }
+
+    .producto-agregar svg {
+        width: 13px;
+        height: 13px;
+    }
+
+    .producto-etiqueta {
+        top: 6px;
+        left: 6px;
+
+        padding: 4px 6px;
+
+        font-size: 8px;
+    }
+
+    .producto-aviso {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .productos-nota {
+        font-size: 10px;
+    }
+}
+
+
+/* ==========================================================
+   26. TELÉFONOS PEQUEÑOS
+   ========================================================== */
+
+@media (max-width: 420px) {
+
+    .productos-page .menu-enlaces {
+        gap: 12px;
+    }
+
+    .productos-page .menu-enlaces a {
+        font-size: .68rem;
+    }
+
+    .productos-page .acciones input {
+        width: 112px;
+    }
+
+    .productos-main {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .productos-hero {
+        padding: 25px 17px;
+    }
+
+    .productos-hero h1 {
+        font-size: 27px;
+    }
+
+    .productos-grid {
+        gap: 8px;
+    }
+
+    .producto-imagen {
+        height: 120px;
+    }
+
+    .producto-detalle h3 {
+        font-size: 12px;
+    }
+
+    .producto-agregar {
+        gap: 3px;
+
+        font-size: 9px;
+    }
+
+    .coleccion-cabecera h2 {
+        font-size: 17px;
+    }
+
+    .ver-coleccion {
+        font-size: 10px;
+    }
+}
+
+
+/* ==========================================================
+   27. ACCESIBILIDAD
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .productos-page *,
+    .productos-page *::before,
+    .productos-page *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+}
+
