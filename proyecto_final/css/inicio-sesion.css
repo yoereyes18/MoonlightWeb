@@ -1,0 +1,121 @@
+.login-dialog {
+    width: min(420px, calc(100% - 32px));
+    padding: 0;
+    overflow: visible;
+    border: 1px solid rgba(248, 232, 203, .38);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #241a24, #100d15);
+    color: #fffaf2;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .55);
+}
+
+.login-dialog::backdrop {
+    background: rgba(9, 7, 12, .5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.login-dialog-contenido {
+    position: relative;
+    padding: 34px;
+}
+
+.login-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: rgba(255, 250, 242, .78);
+    cursor: pointer;
+    font: inherit;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.login-cerrar:hover {
+    background: rgba(255, 250, 242, .1);
+    color: #f1d7a9;
+}
+
+.login-dialog h2 {
+    margin: 0 0 8px;
+    color: #fffaf2;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.login-descripcion {
+    margin: 0 0 24px;
+    color: rgba(255, 250, 242, .72);
+    font-size: .88rem;
+    line-height: 1.6;
+}
+
+.login-formulario {
+    display: grid;
+    gap: 10px;
+}
+
+.login-formulario label {
+    margin-top: 8px;
+    color: rgba(255, 250, 242, .9);
+    font-size: .82rem;
+    font-weight: 700;
+}
+
+.login-formulario input {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 250, 242, .32);
+    border-radius: 5px;
+    background: rgba(10, 8, 13, .72);
+    color: #fffaf2;
+    font: inherit;
+    font-size: .9rem;
+}
+
+.login-formulario input:focus-visible,
+.login-formulario button:focus-visible,
+.login-cerrar:focus-visible {
+    outline: 2px solid #edc985;
+    outline-offset: 3px;
+}
+
+.login-formulario button {
+    min-height: 44px;
+    margin-top: 14px;
+    border: 1px solid #f8e8cb;
+    border-radius: 4px;
+    background: #f8e8cb;
+    color: #25171b;
+    cursor: pointer;
+    font: inherit;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    transition: background .2s ease, color .2s ease;
+}
+
+.login-formulario button:hover {
+    background: transparent;
+    color: #f8e8cb;
+}
+
+@media (max-width: 480px) {
+    .login-dialog-contenido {
+        padding: 30px 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-formulario button {
+        transition: none;
+    }
+}
