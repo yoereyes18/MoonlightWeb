@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ponte en contacto con Moonlight para consultas sobre joyería y velas artesanales.">
+    <title>Contacto | Moonlight</title>
+    <link rel="stylesheet" href="css/contactos.css">
+    <link rel="stylesheet" href="css/navegacion.css">
+    <link rel="stylesheet" href="css/pie-pagina.css">
+    <link rel="stylesheet" href="css/inicio-sesion.css">
+</head>
+<body class="contactos-page">
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a class="site-logo" href="index.html" aria-label="Moonlight, inicio">
+                <img src="img/moonlight-logo.png" alt="Logo de Moonlight">
+            </a>
+            <ul class="site-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="Servicio.html">Servicios</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="Contactos.html" aria-current="page">Contactos</a></li>
+            </ul>
+            <div class="site-actions">
+                <input type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn-login" type="button">Iniciar sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contacto-hero" aria-labelledby="contacto-titulo">
+            <p class="contacto-etiqueta">MOONLIGHT · ESTAMOS PARA AYUDARTE</p>
+            <h1 id="contacto-titulo">Ponte en Contacto</h1>
+            <p>¿Tienes alguna duda sobre nuestras velas artesanales o joyería? Estamos aquí para ayudarte a iluminar tus momentos especiales.</p>
+        </section>
+
+        <section class="contacto-canales" aria-label="Canales directos de contacto">
+            <a class="contacto-card" href="https://wa.me/50370096310" target="_blank" rel="noopener noreferrer">
+                <span class="contacto-icono" aria-hidden="true">◉</span>
+                <h2>WhatsApp</h2>
+                <span class="contacto-dato">+503 7009 6310</span>
+                <p>Atención personalizada y pedidos rápidos. Haz clic para chatear directamente.</p>
+                <span class="contacto-enlace">Iniciar chat <span aria-hidden="true">↗</span></span>
+            </a>
+
+            <a class="contacto-card" href="https://www.instagram.com/moonlightlight962?utm_source=qr&amp;dlrf=aWlqdWE5bnkxcWx4" target="_blank" rel="noopener noreferrer">
+                <span class="contacto-icono" aria-hidden="true">◎</span>
+                <h2>Instagram</h2>
+                <span class="contacto-dato">@moonlightlight962</span>
+                <p>Descubre nuestras colecciones, novedades y el proceso detrás de cada creación.</p>
+                <span class="contacto-enlace">Ver Instagram <span aria-hidden="true">↗</span></span>
+            </a>
+
+            <a class="contacto-card" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=moonlightlight962@gmail.com" target="_blank" rel="noopener noreferrer">
+                <span class="contacto-icono" aria-hidden="true">✉</span>
+                <h2>Correo electrónico</h2>
+                <span class="contacto-dato">moonlightlight962@gmail.com</span>
+                <p>Para consultas generales, colaboraciones o pedidos al por mayor.</p>
+                <span class="contacto-enlace">Escribir por Gmail <span aria-hidden="true">↗</span></span>
+            </a>
+        </section>
+
+        <section class="contacto-info" aria-label="Información de atención y envíos">
+            <article class="info-panel">
+                <span class="info-icono" aria-hidden="true">◷</span>
+                <div>
+                    <h2>Horarios de atención</h2>
+                    <p><strong>Lunes a viernes:</strong> 8:00 a. m. – 6:00 p. m.</p>
+                    <p><strong>Sábados:</strong> 9:00 a. m. – 2:00 p. m.</p>
+                    <p><strong>Domingos:</strong> cerrado. Respondemos mensajes el siguiente día hábil.</p>
+                </div>
+            </article>
+            <article class="info-panel ubicacion-panel">
+                <span class="info-icono" aria-hidden="true">⌖</span>
+                <div>
+                    <h2>Ubicación y envíos</h2>
+                    <p><strong>Ubicación:</strong> INFRAMEN, San Salvador, El Salvador 🇸🇻</p>
+                    <p>Realizamos envíos a todo el país. Coordina tu pedido previamente por WhatsApp o Instagram.</p>
+                    <button class="contacto-enlace ubicacion-abrir" id="abrir-mapa-inframen" type="button">
+                        Ver ubicación <span aria-hidden="true">↗</span>
+                    </button>
+                    <dialog class="ubicacion-dialog" id="dialogo-mapa-inframen" aria-label="Mapa de ubicación del INFRAMEN">
+                        <div class="ubicacion-dialog-mapa">
+                            <iframe
+                                src="https://maps.google.com/maps?q=INFRAMEN%2C%20San%20Salvador%2C%20El%20Salvador&amp;z=15&amp;output=embed"
+                                title="Mapa de ubicación del INFRAMEN en San Salvador"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen>
+                            </iframe>
+                            <form method="dialog">
+                                <button class="ubicacion-cerrar" aria-label="Cerrar mapa">×</button>
+                            </form>
+                        </div>
+                    </dialog>
+                </div>
+            </article>
+        </section>
+
+        <section class="contacto-faq" aria-labelledby="faq-titulo">
+            <div class="seccion-titulo">
+                <p class="contacto-etiqueta">RESPUESTAS RÁPIDAS</p>
+                <h2 id="faq-titulo">Preguntas frecuentes</h2>
+            </div>
+            <div class="faq-lista">
+                <details>
+                    <summary>¿Realizan pedidos personalizados?</summary>
+                    <p>¡Sí! Podemos personalizar velas y detalles de joyería para eventos especiales. Escríbenos por WhatsApp con anticipación para coordinar tu pedido.</p>
+                </details>
+                <details>
+                    <summary>¿Cuánto tarda en llegar mi pedido?</summary>
+                    <p>Los envíos locales toman de 24 a 48 horas hábiles después de confirmar tu compra. Para otros destinos, coordinaremos contigo el tiempo estimado.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="contacto-formulario" aria-labelledby="formulario-titulo">
+            <div class="formulario-intro">
+                <p class="contacto-etiqueta">CUÉNTANOS CÓMO PODEMOS AYUDARTE</p>
+                <h2 id="formulario-titulo">Envíanos un mensaje</h2>
+                <p>Completa tus datos para dejarnos tu consulta.</p>
+            </div>
+            <form id="formulario-contacto">
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" name="Nombre" autocomplete="name" required>
+
+                <label for="correo">Correo electrónico</label>
+                <input id="correo" type="email" name="email" autocomplete="email" required>
+
+                <label for="telefono">Teléfono (opcional)</label>
+                <input id="telefono" type="tel" name="Teléfono" autocomplete="tel">
+
+                <label for="asunto">Asunto</label>
+                <select id="asunto" name="Asunto" required>
+                    <option value="" selected disabled>Selecciona el motivo de tu mensaje</option>
+                    <option>Consulta general</option>
+                    <option>Pedido personalizado</option>
+                    <option>Colaboración</option>
+                </select>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="Mensaje" rows="5" required></textarea>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+            <div class="contacto-confirmacion" id="confirmacion-contacto" role="status" aria-live="polite" hidden>
+                <span class="confirmacion-icono" aria-hidden="true">✓</span>
+                <h3 tabindex="-1">¡Formulario completado!</h3>
+                <p>Gracias por completar el formulario. Por ahora, esta página solo muestra una confirmación y no envía el mensaje.</p>
+                <button type="button" id="enviar-otro-mensaje">Enviar otro mensaje</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-brand">
+                <a class="site-footer-logo" href="index.html">
+                    <img src="img/moonlight-logo.png" alt="">
+                    <span>Moonlight</span>
+                </a>
+                <p>Detalles únicos que iluminan cada momento.</p>
+            </div>
+            <nav class="site-footer-column" aria-label="Enlaces del sitio">
+                <h2>Explora</h2>
+                <ul class="site-footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="Servicio.html">Servicios</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="Contactos.html">Contactos</a></li>
+                </ul>
+            </nav>
+            <section class="site-footer-column" aria-label="Contacto directo">
+                <h2>Contáctanos</h2>
+                <a class="site-footer-contact" href="https://wa.me/50370096310" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp al +503 7009 6310">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.3 2.6 2 4.3 4.6 5l1-1.2 2 .8c-.2 1.3-1.1 2-2.4 2-3.8-.5-6.8-3.5-7.3-7.3 0-1.3.8-2.2 2-2.4l.8 2Z"/></svg>
+                    <span><strong>WhatsApp</strong>+503 7009 6310</span>
+                </a>
+                <a class="site-footer-contact" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=moonlightlight962@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo a moonlightlight962@gmail.com">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+                    <span><strong>Correo</strong>moonlightlight962@<wbr>gmail.com</span>
+                </a>
+            </section>
+            <section class="site-footer-column site-footer-info" aria-label="Ubicación y horario">
+                <h2>¿Dónde estamos?</h2>
+                <a class="site-footer-contact" href="https://www.google.com/maps/search/?api=1&amp;query=INFRAMEN%2C%20San%20Salvador%2C%20El%20Salvador" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+                    <span>INFRAMEN, San Salvador, El Salvador</span>
+                </a>
+                <p><strong>Horario:</strong> lunes a viernes, 8:00 a. m.–6:00 p. m.; sábados, 9:00 a. m.–2:00 p. m.</p>
+                <p>Envíos a todo El Salvador.</p>
+            </section>
+            <section class="site-footer-column" aria-label="Redes sociales">
+                <h2>Síguenos</h2>
+                <div class="site-footer-socials">
+                    <a href="https://www.instagram.com/moonlightlight962/" target="_blank" rel="noopener noreferrer" aria-label="Moonlight en Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.8" r=".8" fill="currentColor" stroke="none"/></svg></a>
+                    <a href="https://wa.me/50370096310" target="_blank" rel="noopener noreferrer" aria-label="Moonlight en WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.3 2.6 2 4.3 4.6 5l1-1.2 2 .8c-.2 1.3-1.1 2-2.4 2-3.8-.5-6.8-3.5-7.3-7.3 0-1.3.8-2.2 2-2.4l.8 2Z"/></svg></a>
+                </div>
+            </section>
+        </div>
+        <div class="site-footer-bottom"><p>© 2026 Moonlight. Todos los derechos reservados.</p></div>
+    </footer>
+    <dialog class="login-dialog" id="login-dialog" aria-labelledby="login-titulo">
+        <div class="login-dialog-contenido">
+            <button class="login-cerrar" type="button" aria-label="Cerrar formulario">×</button>
+            <h2 id="login-titulo">Iniciar sesión</h2>
+            <p class="login-descripcion">Completa tus datos para continuar. Este formulario es una demostración y no guarda tu información.</p>
+            <form class="login-formulario" id="login-form">
+                <label for="login-correo">Correo electrónico</label>
+                <input id="login-correo" name="correo" type="email" autocomplete="email" required>
+                <label for="login-contrasena">Contraseña</label>
+                <input id="login-contrasena" name="contrasena" type="password" autocomplete="current-password" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </dialog>
+    <script src="js/contactos.js" defer></script>
+    <script src="js/inicio-sesion.js" defer></script>
+</body>
+</html>
